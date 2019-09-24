@@ -5,11 +5,11 @@ and that returns a new string that contains the letters from the original string
 which converts a character to a numeric code, and chr, which converts numeric codes to characters.
 '''
 
-def rotate_word(str,int):
+def rotate_word(str,num):
     string=''
-    for str1 in str:
-        string=string+chr(ord(str1)+int)
-        return string
+    for char in str:
+        string=string+chr(ord(char)+num)
+    print(string)
 string1=input("enter a string:\n")
 int1=int(input("enter a number:\n"))
-print(rotate_word(string1,int1))
+rotate_word(string1,int1)

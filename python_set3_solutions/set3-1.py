@@ -12,3 +12,4 @@ Use this idiom to write a one-line version of is_palindrome
 '''
 string1=input("enter a string:\n")
 if string1==string1[::-1]:
+    print("palindrome")

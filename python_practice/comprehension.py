@@ -3,7 +3,7 @@ print(list1)
 
 dict1={i:('yes'if i%4==0 or i%400==0 else'no') for i in range(2000,2050)}
 print(dict1)
-
+#prime
 list2=[ i for i in range(1,100) for j in range(2,i)  if i != j and i % j == 0]
 list3=[i for i in range(1,100) if i not in list2]
 print(list3)
