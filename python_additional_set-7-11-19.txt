@@ -123,20 +123,15 @@ english = 85
 
 tamil = 92
 '''
-fh=open("marks.txt",'w')
-fh.writelines("science=50\nmaths=90\nenglish=85\ntamil=92")
-fh=open("marks.txt",'r')
-s=fh.readlines()
-lis=[]
 import re
-for i in s:
-    r=re.findall("\d+",i)
-    lis.extend(r)
-print(lis)
-sum = 0
-for i in lis:
-    sum=sum+int(i)
-print(sum)
+sum=0
+with open("marks.txt","w") as fw:
+  fw.write("science=50\nmaths=90\nenglish=85\ntamil=92")
+with open("marks.txt","r")as fr:
+  list1=re.findall("\d+",fr.read())
+  for value in list1:
+    sum+=int(value)
+  print(sum)
 ------------------------------------------------------------------------------------------------------ 
 
 '''
@@ -211,21 +206,17 @@ def read_file():
 def write_file():
 '''
 
+import re
+
 def write_file():
-    fh=open("marks1.txt","w")
-    fh.writelines("science=50\nmaths=90\nenglish=85\ntamil=92")
+  with open("marks.txt","w") as fw:
+    fw.write("science=50\nmaths=90\nenglish=85\ntamil=92")
 def read_file():
-    fh=open("marks.txt",'r')
-    s=fh.readlines()
-    lis=[]
-    import re
-    for i in s:
-        r=re.findall("\d+",i)
-        lis.extend(r)
-    print(lis)
-    sum = 0
-    for i in lis:
-        sum=sum+int(i)
-    print(sum)
-read_file()
+  sum=0
+  with open("marks.txt","r")as fr:
+    list1=re.findall("\d+",fr.read())
+  for value in list1:
+    sum+=int(value)
+  print(sum)
 write_file()
+read_file()
