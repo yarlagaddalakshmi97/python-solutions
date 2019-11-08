@@ -128,8 +128,7 @@ sum=0
 with open("marks.txt","w") as fw:
   fw.write("science=50\nmaths=90\nenglish=85\ntamil=92")
 with open("marks.txt","r")as fr:
-  list1=re.findall("\d+",fr.read())
-  for value in list1:
+  for value in re.findall("\d+",fr.read()):
     sum+=int(value)
   print(sum)
 ------------------------------------------------------------------------------------------------------ 
@@ -207,16 +206,14 @@ def write_file():
 '''
 
 import re
-
 def write_file():
   with open("marks.txt","w") as fw:
     fw.write("science=50\nmaths=90\nenglish=85\ntamil=92")
 def read_file():
   sum=0
   with open("marks.txt","r")as fr:
-    list1=re.findall("\d+",fr.read())
-  for value in list1:
-    sum+=int(value)
+    for value in re.findall("\d+",fr.read()):
+      sum+=int(value)
   print(sum)
 write_file()
 read_file()
