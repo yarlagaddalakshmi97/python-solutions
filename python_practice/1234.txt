@@ -1,0 +1,62 @@
+"""test cases for 1/x"""
+import unittest
+from calc import Calculator
+
+
+class CalculatorTest(unittest.TestCase):
+    """test case"""
+    calculator = Calculator()
+
+    def test_one_by_x_value(self):
+        """input=1"""
+        res=Calculator().one_by_x(1)
+        self.assertEqual(res, float(1) / float(res))
+
+    def test_one_by_x_zero_division_error(self):
+        """input=0"""
+        self.assertEqual(Calculator().one_by_x(0), "ZeroDivisionError")
+
+    def test_one_by_x_value_error(self):
+        """input=giving string instead of number"""
+        result = Calculator().one_by_x("s")
+        self.assertEqual(result, "ValueError")
+
+    def test_one_by_x_value5(self):
+        """when we take 5 as input"""
+        result=Calculator().one_by_x(5)
+        self.assertEqual(result,  float(1) / float(result))
+
+
+if __name__ == "__main__":
+    unittest.main()
+
+
+
+
+
+
+
+
+
+
+
+"""
+finding 1/x
+"""
+import logging
+
+
+class Calculator:
+    """finding 1/x through method one_by_x"""
+    def __init__(self):
+        pass
+    def one_by_x(self, number):
+        """returns 1/x"""
+        try:
+            return float(1)/float(number)
+        except ZeroDivisionError:
+            logging.warning("division with zero cannot be performed")
+            return "ZeroDivisionError"
+        except ValueError:
+            logging.warning("give an integer")
+            return "ValueError"
